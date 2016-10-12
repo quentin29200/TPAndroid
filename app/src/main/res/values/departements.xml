@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="departements">
+        <item>Finistère</item>
+        <item>Ile-Et-Vilaine</item>
+        <item>Morbihan</item>
+        <item>Cote Armor</item>
+    </string-array>
+</resources>
