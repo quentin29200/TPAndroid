@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/list">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listClients"
+        android:layout_above="@+id/newClient" />
+
+    <Button
+        android:text="Ajouter une personne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newClient"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="addPerson"/>
+</RelativeLayout>

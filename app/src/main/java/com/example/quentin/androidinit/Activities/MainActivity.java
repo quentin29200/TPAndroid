@@ -1,4 +1,4 @@
-package com.example.quentin.androidinit;
+package com.example.quentin.androidinit.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.example.quentin.androidinit.Perso;
+import com.example.quentin.androidinit.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText nom;
@@ -104,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
 
         // Send to the second activity
-        Intent secondActivity = new Intent(MainActivity.this, SecondActivity.class);
+        Intent secondActivity = new Intent(MainActivity.this, ListActivity.class);
 
         // Add data
         Perso p = new Perso(this.nom.getText().toString(),
                 this.prenom.getText().toString(),
                 this.date_naissance.getText().toString(),
                 this.ville_naissance.getText().toString(),
-                this.phone.getText().toString());
+                null);
 
         secondActivity.putExtra("perso", p);
 

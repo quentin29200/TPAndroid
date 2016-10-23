@@ -5,10 +5,6 @@ import android.os.Parcelable;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
-/**
- * Created by quentin on 06/10/16.
- */
-
 public class Perso implements Parcelable {
     private String nom;
     private String prenom;
@@ -68,5 +64,21 @@ public class Perso implements Parcelable {
                 ", ville_naissance='" + ville_naissance + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getDate_naissance() {
+        return date_naissance;
+    }
+
+    public String getVille_naissance() {
+        return ville_naissance;
     }
 }
