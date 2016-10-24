@@ -33,17 +33,6 @@ public class PersoModel extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    private Perso cursorToPerso(Cursor cursor) {
-        Perso p = new Perso();
-        p.setId(cursor.getInt(0));
-        p.setNom(cursor.getString(1));
-        p.setPrenom(cursor.getString(2));
-        p.setDate_naissance(cursor.getString(3));
-        p.setVille_naissance(cursor.getString(4));
-
-        return p;
-    }
-
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(DATABASE_CREATE);
