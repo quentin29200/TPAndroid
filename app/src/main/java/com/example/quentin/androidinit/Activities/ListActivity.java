@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -16,12 +15,10 @@ import com.example.quentin.androidinit.Provider.PersonContentProvider;
 import com.example.quentin.androidinit.Object.Perso;
 import com.example.quentin.androidinit.R;
 
-import java.util.ArrayList;
-
 public class ListActivity extends AppCompatActivity {
 
     private ListView listClients;
-    private ArrayList<Perso> persos;
+    //private ArrayList<Perso> persos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +57,13 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void displayContentProvider() {
-        Log.i("Display", "Entre");
         Uri persons = PersonContentProvider.CONTENT_URI;
-
-        //Cursor c = getContentResolver().query(persons, null, null, null, null);
         Cursor c = getContentResolver().query(persons, null, null, null, null);
-        Log.i("URI", persons.toString());
         PersoCursorAdapter persocadapter = new PersoCursorAdapter(this, c, 0);
-
         this.listClients.setAdapter(persocadapter);
-        Log.i("Display", "Sort");
     }
 
     private void insertPerso(Perso p) {
-        Log.i("InsertPerso", "Entre");
         ContentValues persons = new ContentValues();
         persons.put(PersoModel.NOM, p.getNom());
         persons.put(PersoModel.PRENOM, p.getPrenom());
@@ -82,6 +72,5 @@ public class ListActivity extends AppCompatActivity {
         getContentResolver().insert(PersonContentProvider.CONTENT_URI, persons);
 
         persons.clear();
-        Log.i("InsertPerso", "Sort");
     }
 }
