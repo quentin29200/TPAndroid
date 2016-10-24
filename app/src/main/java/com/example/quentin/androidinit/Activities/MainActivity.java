@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.quentin.androidinit.Perso;
+import com.example.quentin.androidinit.Object.Perso;
 import com.example.quentin.androidinit.R;
 
 public class MainActivity extends AppCompatActivity {

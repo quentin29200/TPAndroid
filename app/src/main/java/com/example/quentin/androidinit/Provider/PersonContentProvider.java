@@ -1,4 +1,4 @@
-package com.example.quentin.androidinit.BDD;
+package com.example.quentin.androidinit.Provider;
 
 
 import android.content.ContentProvider;
@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.util.Log;
+
+import com.example.quentin.androidinit.Model.PersoModel;
 
 public class PersonContentProvider extends ContentProvider {
     private PersoModel pm;

@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.quentin.androidinit.Perso;
+import com.example.quentin.androidinit.Object.Perso;
 import com.example.quentin.androidinit.R;
 
 public class SecondActivity extends AppCompatActivity {

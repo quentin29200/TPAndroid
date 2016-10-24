@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.quentin.androidinit.Perso;
+import com.example.quentin.androidinit.Object.Perso;
 import com.example.quentin.androidinit.R;
 
 import java.util.ArrayList;

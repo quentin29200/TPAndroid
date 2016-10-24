@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.quentin.androidinit.Adapter.PersoCursorAdapter;
-import com.example.quentin.androidinit.BDD.PersoModel;
-import com.example.quentin.androidinit.BDD.PersonContentProvider;
-import com.example.quentin.androidinit.Perso;
+import com.example.quentin.androidinit.Model.PersoModel;
+import com.example.quentin.androidinit.Provider.PersonContentProvider;
+import com.example.quentin.androidinit.Object.Perso;
 import com.example.quentin.androidinit.R;
 
 import java.util.ArrayList;

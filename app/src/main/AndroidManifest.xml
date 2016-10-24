@@ -23,7 +23,7 @@
             android:name=".Activities.MainActivity"
             android:label="MainActivity" >
         </activity>
-        <provider android:name=".BDD.PersonContentProvider"
+        <provider android:name=".Provider.PersonContentProvider"
             android:authorities="personcontentprovider" />
 
     </application>

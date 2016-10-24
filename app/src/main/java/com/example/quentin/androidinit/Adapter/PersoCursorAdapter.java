@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.quentin.androidinit.BDD.PersoModel;
+import com.example.quentin.androidinit.Model.PersoModel;
 import com.example.quentin.androidinit.R;
 
 

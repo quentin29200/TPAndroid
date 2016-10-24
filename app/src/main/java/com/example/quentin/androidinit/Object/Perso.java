@@ -1,9 +1,7 @@
-package com.example.quentin.androidinit;
+package com.example.quentin.androidinit.Object;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
 
 public class Perso implements Parcelable {
     private int id;
