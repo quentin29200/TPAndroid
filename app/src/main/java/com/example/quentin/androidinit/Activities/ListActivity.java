@@ -6,12 +6,12 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
-import com.example.quentin.androidinit.Adapter.PersoAdapter;
 import com.example.quentin.androidinit.Adapter.PersoCursorAdapter;
-import com.example.quentin.androidinit.BDD.BDDStructure.Person;
+import com.example.quentin.androidinit.BDD.PersoModel;
 import com.example.quentin.androidinit.BDD.PersonContentProvider;
 import com.example.quentin.androidinit.Perso;
 import com.example.quentin.androidinit.R;
@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class ListActivity extends AppCompatActivity {
 
     private ListView listClients;
-    private PersoAdapter persoAdapter;
     private ArrayList<Perso> persos;
 
     @Override
@@ -31,9 +30,6 @@ public class ListActivity extends AppCompatActivity {
 
         //Récupération de la listview créée dans le fichier main.xml
         this.listClients = (ListView) findViewById(R.id.listClients);
-
-        this.insertRecords();
-        this.displayContentProvider();
 
         /*
         this.persos = new ArrayList<>();
@@ -47,18 +43,15 @@ public class ListActivity extends AppCompatActivity {
         this.persos.add(p2);
         this.persos.add(p3);
         this.persos.add(p4);
-
+        */
         Intent i = getIntent();
         if (i != null) {
             Perso p = i.getParcelableExtra("perso");
             if (p != null) {
-                this.persos.add(p);
+                this.insertPerso(p);
             }
         }
-
-        this.persoAdapter = new PersoAdapter(getApplicationContext(), this.persos);
-
-        this.listClients.setAdapter(this.persoAdapter);*/
+        this.displayContentProvider();
     }
 
     public void addPerson(View v) {
@@ -67,32 +60,28 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void displayContentProvider() {
+        Log.i("Display", "Entre");
         Uri persons = PersonContentProvider.CONTENT_URI;
+
+        //Cursor c = getContentResolver().query(persons, null, null, null, null);
         Cursor c = getContentResolver().query(persons, null, null, null, null);
-        PersoCursorAdapter persocadapter = new PersoCursorAdapter(this,c, 0);
+        Log.i("URI", persons.toString());
+        PersoCursorAdapter persocadapter = new PersoCursorAdapter(this, c, 0);
+
         this.listClients.setAdapter(persocadapter);
+        Log.i("Display", "Sort");
     }
 
-    private void insertRecords() {
+    private void insertPerso(Perso p) {
+        Log.i("InsertPerso", "Entre");
         ContentValues persons = new ContentValues();
-        persons.put(Person.NOM, "Lagadec");
-        persons.put(Person.PRENOM, "Quentin");
-        persons.put(Person.DATE_NAISSANCE, "15/02/1994");
-        persons.put(Person.VILLE_NAISSANCE, "BREST");
+        persons.put(PersoModel.NOM, p.getNom());
+        persons.put(PersoModel.PRENOM, p.getPrenom());
+        persons.put(PersoModel.DATE_NAISSANCE, p.getDate_naissance());
+        persons.put(PersoModel.VILLE_NAISSANCE, p.getVille_naissance());
         getContentResolver().insert(PersonContentProvider.CONTENT_URI, persons);
 
         persons.clear();
-        persons.put(Person.NOM, "Albert");
-        persons.put(Person.PRENOM, "Frank");
-        persons.put(Person.DATE_NAISSANCE, "15/12/1987");
-        persons.put(Person.VILLE_NAISSANCE, "QUIMPER");
-        getContentResolver().insert(PersonContentProvider.CONTENT_URI, persons);
-
-        persons.clear();
-        persons.put(Person.NOM, "Dupont");
-        persons.put(Person.PRENOM, "Martin");
-        persons.put(Person.DATE_NAISSANCE, "17/01/1982");
-        persons.put(Person.VILLE_NAISSANCE, "MORLAIX");
-        getContentResolver().insert(PersonContentProvider.CONTENT_URI, persons);
+        Log.i("InsertPerso", "Sort");
     }
 }

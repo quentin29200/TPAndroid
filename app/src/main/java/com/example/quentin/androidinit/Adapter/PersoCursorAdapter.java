@@ -2,13 +2,14 @@ package com.example.quentin.androidinit.Adapter;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-import com.example.quentin.androidinit.BDD.BDDStructure.Person;
+import com.example.quentin.androidinit.BDD.PersoModel;
 import com.example.quentin.androidinit.R;
 
 
@@ -17,6 +18,7 @@ public class PersoCursorAdapter extends CursorAdapter {
 
     public PersoCursorAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
+        Log.i("Adapter", "HELLO");
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -34,10 +36,10 @@ public class PersoCursorAdapter extends CursorAdapter {
         TextView ville = (TextView) v.findViewById(R.id.ville);
 
         // Populate the data into the template view using the data object
-        nom.setText(cursor.getString(cursor.getColumnIndex(Person.NOM)));
-        prenom.setText(cursor.getString(cursor.getColumnIndex(Person.PRENOM)));
-        date_naiss.setText(cursor.getString(cursor.getColumnIndex(Person.DATE_NAISSANCE)));
-        ville.setText(cursor.getString(cursor.getColumnIndex(Person.VILLE_NAISSANCE)));
+        nom.setText(cursor.getString(cursor.getColumnIndex(PersoModel.NOM)));
+        prenom.setText(cursor.getString(cursor.getColumnIndex(PersoModel.PRENOM)));
+        date_naiss.setText(cursor.getString(cursor.getColumnIndex(PersoModel.DATE_NAISSANCE)));
+        ville.setText(cursor.getString(cursor.getColumnIndex(PersoModel.VILLE_NAISSANCE)));
 
     }
 

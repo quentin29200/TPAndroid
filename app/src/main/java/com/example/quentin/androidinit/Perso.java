@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 public class Perso implements Parcelable {
+    private int id;
     private String nom;
     private String prenom;
     private String date_naissance;
@@ -18,6 +19,8 @@ public class Perso implements Parcelable {
         this.date_naissance = date_naissance;
         this.ville_naissance = ville_naissance;
         this.phone = phone;
+    }
+    public Perso() {
     }
 
     protected Perso(Parcel in) {
@@ -80,5 +83,27 @@ public class Perso implements Parcelable {
 
     public String getVille_naissance() {
         return ville_naissance;
+    }
+
+    public int getId() { return id; }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setDate_naissance(String date_naissance) {
+        this.date_naissance = date_naissance;
+    }
+
+    public void setVille_naissance(String ville_naissance) {
+        this.ville_naissance = ville_naissance;
     }
 }

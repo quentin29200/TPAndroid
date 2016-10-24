@@ -12,7 +12,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <data android:mimeType="vnd.android.cursor.item/com.example.quentin.androidinit.BDD.persos" />
+                <data android:mimeType="vnd.android.cursor.item/com.persos" />
             </intent-filter>
         </activity>
         <activity
@@ -24,7 +24,7 @@
             android:label="MainActivity" >
         </activity>
         <provider android:name=".BDD.PersonContentProvider"
-            android:authorities="com.example.quentin.androidinit.BDD.personcontentprovider" />
+            android:authorities="personcontentprovider" />
 
     </application>
 
